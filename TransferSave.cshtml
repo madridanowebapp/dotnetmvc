@@ -1,0 +1,48 @@
+﻿@{
+	ViewBag.Title = "Output";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!--
+//	* Firstname 		 -> firstname
+//	* Lastname			 -> lastname
+//	* TransactionType	 -> transactionType
+//	* Amount    		 -> amount
+//	* Message			 -> message
+//	* Transaction Option -> radioBtnTransactOption
+-->
+
+<div class="container-fluid">
+	<div class="row  pt-3">
+	
+	    <div class="col-md-7 p-5">
+		    <h1 class="font-weight-light text-center mt-5">TRANSFER MONEY WITH</h1>
+		    <h1 class="display-2 text-center">ASP.NET MVC</h1>
+		    <h4 class="font-weight-light text-center">VIEW OUTPUT TAB TO SEE THE RESULT</h4>
+	    </div>
+	    <div class="col-md-5 p-5">
+			<div class="card bg-light text-dark m-1">
+		   		 <div class="card-body">
+		   		 	<h1 class="font-weight-light">Info</h1>
+				    <strong>Fullname</strong> :  @ViewBag.Lastname, @ViewBag.Firstname
+		   		 </div>
+			</div>
+			
+			<div class="card bg-light text-dark m-1">
+		   		 <div class="card-body">
+		   		 	<h1 class="font-weight-light">Transaction</h1>
+				    <strong>Transaction type</strong> :  @ViewBag.TransactionType <br>
+				    <strong>Amount</strong> :  @ViewBag.Amount <br>
+				    <strong>Message</strong> : @ViewBag.Message
+		   		 </div>
+			</div>
+			<div class="card bg-light text-dark m-1">
+		   		 <div class="card-body">
+				    <strong>Transfer Method</strong> :  via ( @ViewBag.Transaction ) <br>
+				    <strong>Date</strong> : @ViewBag.DateOfTransfer
+		   		 </div>
+			</div>
+	    </div>
+	
+	</div>
+</div>

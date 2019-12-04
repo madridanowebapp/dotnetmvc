@@ -1,0 +1,92 @@
+﻿@{
+	ViewBag.Title = "Transfer";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!--
+	* Firstname 		 -> firstname
+	* Lastname			 -> lastname
+	* TransactionType	 -> transactionType
+	* Amount    		 -> amount
+	* Message			 -> message
+
+	* Transaction Option -> radioBtnTransactOption
+-->
+
+
+<div class="container-fluid">
+	<div class="row pt-3">
+	    <div class="col-md-7 p-5">
+		    <h1 class="font-weight-light text-center mt-5">TRANSFER MONEY WITH</h1>
+		    <h1 class="display-2 text-center">ASP.NET MVC</h1>
+		    <h4 class="font-weight-light text-center">VIEW OUTPUT TAB TO SEE THE RESULT</h4>
+	    </div>
+
+	    <div class="col-md-5">
+	    <!-- *****************Form start***************** -->
+		<form action="/Home/TransferSave" method="POST" style="max-width:500px;margin:auto" class="p-3">
+		
+		  <h1 class="font-weight-light">Transfer funds to </h1>
+			  <div class="input-group mb-3">
+			    <div class="input-group-prepend">
+		         <span class="input-group-text">Person</span>
+			    </div>
+			    <input type="text" class="form-control" placeholder="First Name"  name="firstname" required>
+			    <input type="text" class="form-control" placeholder="Last Name" name="lastname" required>
+			  </div>
+			  
+	      <h2 class="font-weight-light">Transaction/Amount</h2>
+	    	  <select name="transactionType" class="custom-select mb-3" >
+			      <option selected>Select type</option>
+			      <option value="Others">Others</option>
+			      <option value="Cepalco">Cepalco</option>
+			      <option value="PLDT">PLDT - reload</option>
+  			      <option value="ParasatHD">ParasatHD - reload</option>
+			      <option value="Globe">Globe - reload</option>
+  			      <option value="Smart">Smart - reload</option>
+  			      <option value="Sun">Sun - reload</option>
+			      <option value="Tnt">Tnt - reload</option>
+  			      <option value="ABSCBN">ABSCBN - reload</option>
+  			      <option value="SkyCable">Sky cable - reload</option>
+		      </select>
+		      
+			<div class="input-group mb-3">
+			  <div class="input-group-prepend">
+			    <span class="input-group-text">Amount</span>
+			  </div>
+			  <input type="text" class="form-control" name="amount">
+			</div>
+			
+		    <div class="input-group mb-3 input-group-lg">
+		      <div class="input-group-prepend">
+		        <span class="input-group-text">Message</span>
+		      </div>
+		      <textarea type="text" class="form-control" name="message" required></textarea>
+		    </div>
+			  
+			<div class="input-group date" data-provide="datepicker">
+			    <input type="date" class="form-control" name="dateTransfer">
+			    <div class="input-group-addon">
+			        <span class="glyphicon glyphicon-th"></span>
+			    </div>
+			</div>
+	    <h3 class="font-weight-light">I would like to use my</h3>
+	       <div class="custom-control custom-radio custom-control-inline">
+			    <input type="radio" class="custom-control-input" id="customRadio" name="radioBtnTransactOption" value="AccountWallet" checked="checked">
+			    <label class="custom-control-label" for="customRadio">Account wallet</label>
+		   </div>
+	  	   <div class="custom-control custom-radio custom-control-inline">
+			    <input type="radio" class="custom-control-input" id="customRadio2" name="radioBtnTransactOption" value="Credit Card">
+			    <label class="custom-control-label" for="customRadio2">Credit card</label>
+		   </div> 
+		   <div class="custom-control custom-radio custom-control-inline">
+			    <input type="radio" class="custom-control-input" id="customRadio3" name="radioBtnTransactOption" value="Points">
+			    <label class="custom-control-label" for="customRadio3">Points</label>
+		   </div> 
+				
+			<hr>
+		  <button type="submit" class="btn">Transfer</button>
+  			<!-- *****************Form end***************** -->
+		</form>	
+	    </div>
+	 </div>
+</div>
